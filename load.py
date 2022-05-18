@@ -2,6 +2,7 @@ import joblib
 import numpy as np
 import preprocess
 import pandas as pd
+import const
 
 from sklearn.preprocessing import OneHotEncoder
 
@@ -31,12 +32,11 @@ NUMERIC_COLS = [
     "number_diagnoses",
 ]
 
-MODEL_PATH = "./model_2022-05-17 20:09:06.651002.dat"
 
 def load_model_data() -> dict:
     x_enc, y_enc = preprocess.make_encoders_v3()
     return {
-        "clf": joblib.load(MODEL_PATH),
+        "clf": joblib.load(const.MODEL_PATH),
         "x_nominal_encoder": x_enc,
         "y_encoder": y_enc,
     }
