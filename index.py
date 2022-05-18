@@ -2,7 +2,6 @@
 
 from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
-from random import randint
 from threading import Lock
 import load
 
@@ -12,8 +11,9 @@ obj_mutex = Lock()
 app = Flask(__name__)
 CORS(app)
 
-def do_prediction():
-    return randint(0, 1)
+def dumpS(what):
+    with open(what) as file:
+        return file.read();
 
 
 @app.route("/predict", methods=["POST"])
@@ -32,6 +32,18 @@ def predict():
         abort(500)
 
     return response
+
+@app.route("/", methods=["GET"])
+def index():
+    return dumpS("www/index.html")
+
+@app.route("/script.js", methods=["GET"])
+def script():
+    return dumpS("www/script.js")
+
+@app.route("/style.css", methods=["GET"])
+def style():
+    return dumpS("www/style.css")
 
 if __name__ == '__main__':
     app.run()
