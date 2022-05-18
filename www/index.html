@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="form-content">
+			<div id="form-header">
+				Early Hospital Readmission Predictor
+			</div>
+			<form method="dialog">
+
+				<!-- Nominal values -->
+
+				<div class="form-attr">
+					<div>Race</div>
+					<select class="form-attr-inner" name="race" id="race" required>
+						<option value="African American">African American</option>
+						<option value="Asian">Asian</option>
+						<option value="Caucasian">Caucasian</option>
+						<option value="Hispanic">Hispanic</option>
+						<option value="Other">Other</option>
+						<option value="?">Unknown</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Gender</div>
+					<select class="form-attr-inner" name="gender" id="gender" required>
+						<option value="Female">Female</option>
+						<option value="Male">Male</option>
+						<option value="Uknown/Invalid">Other/Unknown</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Age (Years)</div>
+					<input class="form-attr-inner" type="number" id="age" placeholder="Age" name="Age" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Weight (Kg)</div>
+					<input class="form-attr-inner" type="number" id="weight" placeholder="Weight" name="Weight" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Admission Type</div>
+					<select class="form-attr-inner" name="admission_type_id" id="admission_type_id" required>
+						<option value="3">Elective</option>
+						<option value="1">Emergency</option>
+						<option value="4">Newborn</option>
+						<option value="5">Not available/Other</option>
+						<option value="7">Trauma Center</option>
+						<option value="2">Urgent</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Discarge Disposition</div>
+					<select class="form-attr-inner" name="discharge_disposition_id" id="discharge_disposition_id" required>
+						<option value="9">Admitted as an inpatient to this hospital</option>
+						<option value="1">Discharged to home</option>
+						<option value="4">Discharged/transferred to ICF</option>
+						<option value="3">Discharged/transferred to a federal health care facility</option>
+						<option value="27">Discharged/transferred to a federal health care facility</option>
+						<option value="23">Discharged/transferred to a long term care hospital</option>
+						<option value="24">Discharged/transferred to a nursing facility certified under Medicaid but not certified under Medicare</option>
+						<option value="22">Discharged/transferred to another short term hospital</option>
+						<option value="5">Discharged/transferred to another type of inpatient care institution</option>
+						<option value="8">Discharged/transferred to home under care of Home IV provider</option>
+						<option value="6">Discharged/transferred to home with home health service</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Admission Source</div>
+					<select class="form-attr-inner" name="admission_source_id" id="admission_source_id" required>
+						<option value="17">None/Unknown</option>
+						<option value="2">Clinic Referral</option>
+						<option value="8">Court/Law enforcment</option>
+						<option value="7">Emergency Room</option>
+						<option value="4">Transfer from a Hospital</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Payer Code</div>
+					<select class="form-attr-inner" name="payer_code" id="payer_code" required>
+						<option value="?">None/Unknown</option>
+						<option value="BC">BC</option>
+						<option value="CH">CH</option>
+						<option value="CM">CM</option>
+						<option value="CP">CP</option>
+						<option value="MC">MC</option>
+						<option value="HM">HM</option>
+						<option value="OG">OG</option>
+						<option value="SP">SP</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Medical specialty</div>
+					<select class="form-attr-inner" name="medical_specialty" id="medical_specialty" required>
+						<option value="?">None/Unknown</option>
+						<option value="AllergyandImmunology">Allergy and Immunology</option>
+						<option value="Cardiology">Cardiology</option>
+						<option value="Emergency/Trauma">Emergency/Trauma</option>
+						<option value="Family/GeneralPractice">Family/General Practice</option>
+						<option value="InternalMedicine">Internal Medicine</option>
+						<option value="Orthopedics-Reconstructive">Orthopedics Reconstructive</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Diagnosis Code 1</div>
+					<select class="form-attr-inner" name="diag_1" id="diag_1" required>
+						<option value="?">None/Unknown</option>
+						<option value= "10">10</option>
+						<option value= "11" >11</option>
+						<option value= "110">110</option>
+						<option value= "112">112</option>
+						<option value= "114">114</option>
+						<option value= "115">115</option>
+						<option value= "117">117</option>
+						<option value= "131">131</option>
+						<option value= "133">133</option>
+						<option value= "135">135</option>
+						<option value= "136">136</option>
+						<option value= "141">141</option>
+						<option value= "142">142</option>
+						<option value= "143">143</option>
+						<option value= "145">145</option>
+						<option value= "146">146</option>
+						<option value= "147">147</option>
+						<option value= "148">148</option>
+						<option value= "149">149</option>
+						<option value= "150">150</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Diagnosis Code 2</div>
+					<select class="form-attr-inner" name="diag_2" id="diag_2" required>
+						<option value="?">None/Unknown</option>
+						<option value= "10">10</option>
+						<option value= "11" >11</option>
+						<option value= "110">110</option>
+						<option value= "112">112</option>
+						<option value= "114">114</option>
+						<option value= "115">115</option>
+						<option value= "117">117</option>
+						<option value= "131">131</option>
+						<option value= "133">133</option>
+						<option value= "135">135</option>
+						<option value= "136">136</option>
+						<option value= "141">141</option>
+						<option value= "142">142</option>
+						<option value= "143">143</option>
+						<option value= "145">145</option>
+						<option value= "146">146</option>
+						<option value= "147">147</option>
+						<option value= "148">148</option>
+						<option value= "149">149</option>
+						<option value= "150">150</option>
+					</select>
+				</div>
+				<div class="form-attr">
+					<div>Diagnosis Code 3</div>
+					<select class="form-attr-inner" name="diag_3" id="diag_3" required>
+						<option value="?">None/Unknown</option>
+						<option value= "10">10</option>
+						<option value= "11" >11</option>
+						<option value= "110">110</option>
+						<option value= "112">112</option>
+						<option value= "114">114</option>
+						<option value= "115">115</option>
+						<option value= "117">117</option>
+						<option value= "131">131</option>
+						<option value= "133">133</option>
+						<option value= "135">135</option>
+						<option value= "136">136</option>
+						<option value= "141">141</option>
+						<option value= "142">142</option>
+						<option value= "143">143</option>
+						<option value= "145">145</option>
+						<option value= "146">146</option>
+						<option value= "147">147</option>
+						<option value= "148">148</option>
+						<option value= "149">149</option>
+						<option value= "150">150</option>
+					</select>
+				</div>
+
+				<!-- Strictly numeric values -->
+
+				<div class="form-attr">
+					<div>Days in Hospital</div>
+					<input class="form-attr-inner" type="number" id="time_in_hospital" placeholder="Days in Hospital" name="Days in Hospital" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Number of Lab Procedures</div>
+					<input class="form-attr-inner" type="number" id="num_lab_procedures" placeholder="Number of Lab Procedures" name="Number of Lab Procedures" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Total number of Procedures</div>
+					<input class="form-attr-inner" type="number" id="num_procedures" placeholder="Total number of Procedudres" name="Total number of Procedures" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Number of medications administered</div>
+					<input class="form-attr-inner" type="number" id="num_medications" placeholder="Number of medications administered" name="Number of medications administered" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Number of outpatient visits</div>
+					<input class="form-attr-inner" type="number" id="number_outpatient" placeholder="Number of outpatient visits" name="Number of outpatient visits" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Number of emergency visits</div>
+					<input class="form-attr-inner" type="number" id="number_emergency" placeholder="Number of emergency visits" name="Number of emergency visits" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Number of inpatient visits</div>
+					<input class="form-attr-inner" type="number" id="number_inpatient" placeholder="Number of inpatient visits" name="Number of inpatient visits" required><br>
+				</div>
+				<div class="form-attr">
+					<div>Number of diagnoses</div>
+					<input class="form-attr-inner" type="number" id="number_diagnoses" placeholder="Number of diagnoses" name="Number of diagnoses" required><br>
+				</div>
+				<div class="form-attr form-attr-last">
+					<input class="form-attr-inner form-attr-inner-last" type="submit" value="Predict" onclick="doPrediction()">
+				</div>
+			</form> 
+			<div id="result-box">
+				<div id="prediction-result"></div>
+				<div id="confidence-result"></div>
+			</div>
+		</div>
+
+		<!-- -->
+
+		<script src="./script.js"></script>
+	</body>
+</html>
